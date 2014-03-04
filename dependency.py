@@ -5,12 +5,13 @@ from bs4 import BeautifulSoup
 
 class Dependency:
     
-    def __init__(self, link,  name = "", html = "", links = [], 
+    def __init__(self, link,  name = "", html = "", links = [], down_links = [],
                  download = False , extracted = False, install = False):
         self.html = self.set_html(link)
         self.name = self.set_name()
         self.link = link
         self.links = self.set_links(link)
+        self.down_links = self.set_download_link(self.html)
         self.download = download
         self.extracted = extracted
         self.install = install
@@ -52,10 +53,19 @@ class Dependency:
         return dep
            
     def to_string(self):
-        print(self.name)
+        print("Arquivo: ", self.name)
         #print(self.html)
-        print(self.link)
-        print(self.download)
-        print(self.extracted)
-        print(self.install)
-  
+        print("Em: ",self.link)
+        #print(self.download)
+        #print(self.extracted)
+        #print(self.install)
+
+    def set_download_link(self, html):
+        p = str(self.html.find_all("div", class_="section center"))
+        p = BeautifulSoup(p)
+        down_links = []
+        for link in p.find_all('a'): 
+            r = str(link.get("href"))
+            if r.endswith((".gz", ".tgz", ".bz2", ".xz")) :
+                down_links.append(r)
+        return down_links
