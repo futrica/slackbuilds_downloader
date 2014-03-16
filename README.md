@@ -24,5 +24,6 @@ the script will download, extract and install your file and dependencies.
     Subprocess - https://pypi.python.org/pypi/pyutilib.subprocess/3.2
 
 ## Brasilian Portuguese
-    acesse o tutorial em:
+    acesse o tutorial em: http://programmertask.blogspot.com.br/2014/03/slackbuildsdownloader.html
+
 
