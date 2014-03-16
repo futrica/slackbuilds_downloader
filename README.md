@@ -7,7 +7,7 @@ It's simple way to download a file in slackbuilds.org and yours dependecies.
 ## Download
 
     on terminal:
-        git clone https://github.com/futrica/slackbuilds_download
+        git clone https://github.com/futrica/slackbuilds_downloader
 
 ## Using
 
