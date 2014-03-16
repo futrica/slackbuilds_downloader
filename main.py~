@@ -11,7 +11,6 @@ import subprocess
 
 #create a instance of class Dependency
 #cria uma instância da classe Dependency
-print("Entre com o link do arquivo do site Slackbuilds.org")
 s = input()
 file = Dependency(s)
 
@@ -53,11 +52,11 @@ for x in dependencies:
     if z != []:
         for y in z:
             dependencies.append(y)
-
+            
 for x in dependencies:
     x.to_string()
     print(" ")
-
+    
 
 
 print(" ")
@@ -130,4 +129,4 @@ print("Complete")
 print(" ")
 print("Arquivo instalado com sucesso! ")
 
-
+    
